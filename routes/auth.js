@@ -68,7 +68,7 @@ router.post("/login", async (req, res) => {
     if (isDebugMode) {
       console.log(`[DEBUG] Token generated for user: ${email}`);
     }
-    res.json({ token });
+    res.json({ token, name: user.name });
   } catch (err) {
     if (isDebugMode) {
       console.error(`[DEBUG] Error in login: ${err.message}`);
